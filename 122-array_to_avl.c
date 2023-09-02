@@ -8,7 +8,7 @@
  */
 avl_t *array_to_avl(int *array, size_t size)
 {
-	size_t i, k = 0;
+	size_t i, j = 0;
 	avl_t *root;
 
 	root = NULL;
@@ -18,12 +18,12 @@ avl_t *array_to_avl(int *array, size_t size)
 	}
 	for (i = 0; i < size; i++)
 	{
-		for (k = 0; k < i; k++)
+		for (j = 0; j < i; j++)
 		{
-			if (array[k] == array[i])
+			if (array[j] == array[i])
 				break;
 		}
-		if (k == i)
+		if (j == i)
 		{
 			if (avl_insert(&root, array[i]) == NULL)
 			{
